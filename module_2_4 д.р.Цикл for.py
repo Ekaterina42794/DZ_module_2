@@ -32,16 +32,16 @@ print(numbers)
 numbers.remove(1)
 print(numbers)
 # создаем пустой список для хранения простых чисел
-lst_ = []
-lst_2 = []
+primes = []
+not_primes = []
 # пробегаем все числа от 2 до N
-for i in range(numbers[0], len(numbers)+2):  # пробегаем все числа от 2 до текущего
+for i in numbers:  # пробегаем все числа от 2 до текущего
     for d in range(2, i - 1):
         if i % d == 0:
-            lst_2.append(i)
+            not_primes.append(i)
             break
     else:
-            lst_.append(i)
+            primes.append(i)
 
-print("простые", lst_)
-print("Непростые", lst_2)
+print("простые", primes)
+print("Не простые", not_primes)
