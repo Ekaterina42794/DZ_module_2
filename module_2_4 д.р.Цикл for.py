@@ -26,72 +26,22 @@ Not Primes: [4, 6, 8, 9, 10, 12, 14, 15]
 Попробуйте оптимизировать(ускорить) процесс выяснения простоты числа при помощи оператора break, когда найдёте делитель. (Не обязательно)
 Переменные меняющее своё булевое состояние на противоположное в процессе проверки, как is_prime, в кругах разработчиков называются перменными-флагами(flag).'''
 
+'''простое число - целое число >0 , исключая 1, делится на 1 и на себя'''
 numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
-#список not_primes, содержащий все не простые числа.
+print(numbers)
+numbers.remove(1)
+print(numbers)
 # создаем пустой список для хранения простых чисел
-primes=[]
-# в k будем хранить количество делителей
-k = 0
+lst_ = []
+lst_2 = []
 # пробегаем все числа от 2 до N
-for i in range(1, 15):
-    # пробегаем все числа от 2 до текущего
-    for j in range(2, i):
-        # ищем количество делителей
-        if i % j == 0:
-            k = k + 1
-    # если делителей нет, добавляем число в список
-    if k == 0:
-        primes.append(i)
-    else:
-        k = 0
-# выводим на экран список
-print (primes)
-
-# Листинг 6
-from math import sqrt
-n = input("n=")
-lst=[2]
-for i in xrange(3, n+1, 2):
-    if (i > 10) and (i%10==5):
-        continue
-    for j in lst:
-        if j > int((sqrt(i)) + 1):
-            lst.append(i)
-            break
-        if (i % j == 0):
+for i in range(numbers[0], len(numbers)+2):  # пробегаем все числа от 2 до текущего
+    for d in range(2, i - 1):
+        if i % d == 0:
+            lst_2.append(i)
             break
     else:
-        lst.append(i)
-print lst
+            lst_.append(i)
 
-# Листинг 7
-n = input("n=")
-lst=[2]
-for i in xrange(3, n+1, 2):
-	if (i > 10) and (i%10==5):
-		continue
-	for j in lst:
-		if j*j-1 > i:
-			lst.append(i)
-			break
-		if (i % j == 0):
-			break
-	else:
-		lst.append(i)
-print lst
-
-
-# Листинг 8
-n = input("n=")
-a = range(n+1)
-a[1] = 0
-lst = []
-
-i = 2
-while i <= n:
-    if a[i] != 0:
-        lst.append(a[i])
-        for j in xrange(i, n+1, i):
-            a[j] = 0
-    i += 1
-print lst
+print("простые", lst_)
+print("Непростые", lst_2)
