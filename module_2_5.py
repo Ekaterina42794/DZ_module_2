@@ -32,6 +32,8 @@ print(result3)
 
 Файл с кодом (module_2_5.py) прикрепите к домашнему заданию или пришлите ссылку на ваш GitHub репозиторий
 с файлом решения.'''
+
+
 def get_matrix(n, m, value):
     matrix = []
     for i in range(n):
@@ -40,7 +42,7 @@ def get_matrix(n, m, value):
             matrix[i].append(value)
     print(matrix)
 
+
 result1 = get_matrix(2, 2, 10)
 result2 = get_matrix(3, 5, 42)
 result3 = get_matrix(4, 2, 13)
-
