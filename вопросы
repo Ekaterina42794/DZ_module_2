@@ -1,0 +1,13 @@
+https://github.com/Ekaterina42794/LESSON/blob/master/Урок_Словари%20и%20множества.py
+'''update'''
+phone_book.update({'Kei':2121,'Alex':3232}) # update добавляет и обновляет несколько
+                                            # пар ключ-значение
+# ??? этот метод принимает другой словарь,который указываем в скобках Scripts ???
+print(phone_book)
+
+'''get'''
+print(phone_book.get('Kei'))     #выводит значение ключа
+print(phone_book.get('Denis'))   # None если нет такого ключа
+print(phone_book.get('Denis',"такого ключа нет")) # или запись
+
+https://github.com/Ekaterina42794/LESSON/blob/master/Урок_Словари%20и%20множества.py
