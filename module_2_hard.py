@@ -19,4 +19,8 @@ for i in range(1, 20):
                     '''print("j=", j)'''
                 continue
 '''print("пароль", result)'''
-print("пароль", *result)
+print(type(result),"пароль", *result, "=", result.__sizeof__(),)
+result_kortej=tuple([result]) # перевод списка в кортеж !!!
+print(type(result_kortej),result_kortej, "=", result_kortej.__sizeof__(),"Кортеж занимает мало места и неизменяем")
+
+
