@@ -18,4 +18,5 @@ result_kortej=tuple([result]) # перевод списка в кортеж !!!
 print(type(result_kortej),result_kortej, "=", result_kortej.__sizeof__(),"Кортеж занимает мало места и неизменяем")
 
 откуда берется запятая при выввводе кортежа при малом весе   ??
+
 https://github.com/Ekaterina42794/DZ_module_2/blob/main/module_2_hard.py
