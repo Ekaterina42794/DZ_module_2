@@ -17,4 +17,5 @@ for i in range(1, 20):
                     result.append(j)
                     '''print("j=", j)'''
                 continue
-print("пароль", result)
+'''print("пароль", result)'''
+print("пароль", *result)
