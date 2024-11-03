@@ -5,9 +5,9 @@
 
 
 string_info()'''
-import random                       # для подсчета скорости выполнения#
+import random  # для подсчета скорости выполнения#
 from string import ascii_lowercase  # для подсчета скорости выполнения#
-import timeit                       # для подсчета скорости выполнения#
+import timeit  # для подсчета скорости выполнения#
 
 calls = 0  # Создать переменную вне функций.
 
@@ -39,12 +39,13 @@ def is_contains(string=str(input('введите слово:_ ')), list_=list(in
     list_ = list(list_)
     '''list_1 = [x.upper() for x in list_]  # перевод элементов списка в другой регистр с помощью генератора (дольше,чем map) 2,3784
     print(timeit.timeit(lambda: [x.upper() for x in list_]),'скорость выполнения [x.upper() for x in list_]')'''
-    list_ =list(map(str.upper, list_)) ''' перевод элементов списка в другой регистр с помощью map 2,1950'''
-    #print(timeit.timeit(lambda: list(map(str.upper, list_))),'скорость выполнения list(map(str.upper, list_))')
-
+    list_ = list(map(str.upper, list_))
+    ''' перевод элементов списка в другой регистр с помощью map 2,1950'''
+    # print(timeit.timeit(lambda: list(map(str.upper, list_))),'скорость выполнения list(map(str.upper, list_))')
 
     print(string)
     print(list_)
+
 
 '''мама МЫЛА раму'''
 is_contains()
