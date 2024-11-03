@@ -103,4 +103,3 @@ print(calls)
 
 #print("12" in food) # команда in проверяет есть ли указанный пункт в списке
 
-'''print(count_calls(),string_info())'''"в нижнем регистре", my_string.lower())      #Выведите строку my_string в нижнем регистре.'''
