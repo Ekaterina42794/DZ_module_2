@@ -59,7 +59,6 @@ from module_2_hard import result
 
 calls = 0  # Создать переменную вне функций.
 
-
 def count_calls():  # подсчитывающая вызовы остальных функций. Создать функцию count_calls и
     global calls  # изменять в ней значение переменной calls. Эта функция должна
     calls += 1  # вызываться в остальных двух функциях.
@@ -73,7 +72,6 @@ def string_info(string=str(
     print(tuple_)
     count_calls()  # Эта функция должна вызываться в остальных двух функциях.
     return tuple_
-
 
 def is_contains(string_1=str(input('введите слово:_ ')), list_=list(input('введите список:_ '))): #  '''принимает два аргумента: строку и список, и возвращает True, если строка находится в этом списке, False - если отсутствует. Регистром строки при проверке пренебречь: UrbaN ~ URBAN/ Создать функцию is_contains с двумя параметрами string и list_to_search, реализовать логику работы по описанию.'''
     string_1 = str(string_1.upper())
