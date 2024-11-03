@@ -19,7 +19,7 @@ def count_calls():  # подсчитывающая вызовы остальны
     calls += 1  # вызываться в остальных двух функциях.
 
 
-'''
+
 
 def string_info(string = str(input('введите слово: _ '))):  # принимает аргумент - строку и возвращает кортеж из: длины этой строки,
      # строку в верхнем регистре, строку в нижнем регистре. Создать функцию
@@ -28,15 +28,14 @@ def string_info(string = str(input('введите слово: _ '))):  # при
     print(tuple_)
     count_calls()
     return tuple_
-'''
 
 
-# принимает два аргумента: строку и список, и
-# возвращает True, если строка находится в этом списке, False - если отсутствует.
-# Регистром строки при проверке пренебречь: UrbaN ~ URBAN
-# Создать функцию is_contains с двумя параметрами string и list_to_search,
-# реализовать логику работы по описанию.
 def is_contains(string=str(input('введите слово:_ ')), list_=list(input('введите список:_ '))):
+    # принимает два аргумента: строку и список, и
+    # возвращает True, если строка находится в этом списке, False - если отсутствует.
+    # Регистром строки при проверке пренебречь: UrbaN ~ URBAN
+    # Создать функцию is_contains с двумя параметрами string и list_to_search,
+    # реализовать логику работы по описанию.
     string = str(string.upper())
     list_ = list(list_)
     '''list_1 = [x.upper() for x in list_]  # перевод элементов списка в другой регистр с помощью генератора (дольше,чем map) 2,3784
@@ -45,8 +44,8 @@ def is_contains(string=str(input('введите слово:_ ')), list_=list(in
     ''' перевод элементов списка в другой регистр с помощью map 2,1950'''
     # print(timeit.timeit(lambda: list(map(str.upper, list_))),'скорость выполнения list(map(str.upper, list_))')
     count_calls()
-    for i in range (len(list_)):
-        if list_== string:
+    for i in range(len(list_)):
+        if list_ == string:
             result = True
             break
         else:
@@ -55,6 +54,8 @@ def is_contains(string=str(input('введите слово:_ ')), list_=list(in
     return result
     print(string)
     print(list_)
+
+
 string_info()
 is_contains()
 print(calls)
