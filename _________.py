@@ -9,6 +9,8 @@ import random  # для подсчета скорости выполнения#
 from string import ascii_lowercase  # для подсчета скорости выполнения#
 import timeit  # для подсчета скорости выполнения#
 
+from module_2_hard import result
+
 calls = 0  # Создать переменную вне функций.
 
 
@@ -42,13 +44,20 @@ def is_contains(string=str(input('введите слово:_ ')), list_=list(in
     list_ = list(map(str.upper, list_))
     ''' перевод элементов списка в другой регистр с помощью map 2,1950'''
     # print(timeit.timeit(lambda: list(map(str.upper, list_))),'скорость выполнения list(map(str.upper, list_))')
-
+    count_calls()
+    for i in range (len(list_)):
+        if list_== string:
+            result = True
+            break
+        else:
+            result = False
+            continue
+    return result
     print(string)
     print(list_)
-
-
-'''мама МЫЛА раму'''
+string_info()
 is_contains()
+print(calls)
 
 
 
