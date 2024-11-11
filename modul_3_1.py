@@ -84,6 +84,8 @@ print('Вы использовали функции', calls, "раза")
 # True
 # False
 # 4
+
+
 '''
 (4, 'COPY', 'copy')
 (6, 'ARMADA', 'armada')
