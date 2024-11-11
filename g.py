@@ -31,3 +31,13 @@ print('Вы использовали функции', calls, "раза")
 # True
 # False
 # 4
+'''
+(4, 'COPY', 'copy')
+(6, 'ARMADA', 'armada')
+False
+None
+False
+None
+Вы использовали функции 4 раза
+
+Process finished with exit code 0'''
