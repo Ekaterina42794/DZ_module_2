@@ -23,9 +23,16 @@
  на адрес <recipient>."
 Здесь <sender> и <recipient> - значения хранящиеся в этих переменных.
 За один вызов функции выводится только одно и перечисленных уведомлений! Проверки перечислены по мере выполнения.'''
-def send_email(message, recipient, sender = "university.help@gmail.com"): #2 обычных аргумента: message(сообщение), recipient(получатель)и 1 обязательно именованный аргумент со значением по умолчанию sender = "university.help@gmail.com".
-    Если строки  recipient  и sender  не содержит  "@"  или  не  оканчивается  на  ".com" / ".ru" / ".net", то
-    вывести на  экран(в консоль) строку: "Невозможно отправить письмо с адреса <sender> на адрес <recipient>".
+
+def send_email(message, recipient, sender = "university.help@gmail.com"): #2 обычных аргумента: message(сообщение),
+    # recipient(получатель)и 1 обязательно именованный аргумент со значением по умолчанию
+    # sender = "university.help@gmail.com".
+    #Если строки  recipient  и sender  не содержит  "@"  или  не  оканчивается  на  ".com" / ".ru" / ".net", то
+    #вывести на  экран(в консоль) строку: "Невозможно отправить письмо с адреса <sender> на адрес <recipient>".
+    if recipient.endswith(('.com', '.ru', '.net')) and sender.endswith(('.com', '.ru', '.net')):
+        if a not in recipient and sender:
+            print(f'Невозможно отправить письмо с адреса {sender} на адрес {recipient}')
+            break
 
 '''Если же sender и recipient совпадают, то вывести "Нельзя отправить письмо самому себе!" '''
 '''
