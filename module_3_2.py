@@ -24,58 +24,54 @@
 Здесь <sender> и <recipient> - значения хранящиеся в этих переменных.
 За один вызов функции выводится только одно и перечисленных уведомлений! Проверки перечислены по мере выполнения.'''
 
-def send_email(message, recipient, sender = "university.help@gmail.com"): #2 обычных аргумента: message(сообщение),
+def send_email(message, recipient, *, sender='university.help@gmail.com'):
+    #2 обычных аргумента: message(сообщение),
     # recipient(получатель)и 1 обязательно именованный аргумент со значением по умолчанию
     # sender = "university.help@gmail.com".
-    #Если строки  recipient  и sender  не содержит  "@"  или  не  оканчивается  на  ".com" / ".ru" / ".net", то
-    #вывести на  экран(в консоль) строку: "Невозможно отправить письмо с адреса <sender> на адрес <recipient>".
-    if recipient.endswith(('.com', '.ru', '.net')) and sender.endswith(('.com', '.ru', '.net')):
-        if a not in recipient and sender:
+    # Обязательно именованные аргументы отделяются от остальных символом "*" перед ними.
+    # Именованные аргументы всегда идут после позиционных.
+    # Если строки recipient(получатель)  и sender(отправитель)  не содержит "@" или не оканчивается на
+    # ".com" / ".ru" / ".net", то вывести на экран(в консоль) строку:
+    # "Невозможно отправить письмо с адреса <sender> на адрес <recipient>".
+    a = '@'
+    while 1 > 0:
+        if recipient.endswith(('.com', '.ru', '.net')) and sender.endswith(('.com', '.ru', '.net')):
+            if a not in recipient and sender:
+                print(f'Невозможно отправить письмо с адреса  {sender} на адрес {recipient}')
+                break
+        else:
             print(f'Невозможно отправить письмо с адреса {sender} на адрес {recipient}')
             break
+        #Если же sender и recipient совпадают, то вывести "Нельзя отправить письмо самому себе!"
+        if sender == recipient:
+            print('Нельзя отправить письмо самому себе!')
+            break
+        # Если же отправитель по умолчанию - university.help@gmail.com, то вывести сообщение: "Письмо успешно
+        # отправлено с адреса <sender> на адрес <recipient>."
+        elif sender == 'university.help@gmail.com':
+            print(f'Письмо успешно отправлено с адреса {sender} на адрес {recipient}')
+            break
+        # В противном случае вывести сообщение:
+        # "НЕСТАНДАРТНЫЙ ОТПРАВИТЕЛЬ! Письмо отправлено с адреса <sender> на адрес <recipient>."
+        elif sender != 'university.help@gmail.com':
+            print(f'НЕСТАНДАРТНЫЙ ОТПРАВИТЕЛЬ! Письмо отправлено с адреса {sender} на адрес {recipient}')
+            break
 
-'''Если же sender и recipient совпадают, то вывести "Нельзя отправить письмо самому себе!" '''
-'''
-Если же отправитель по умолчанию - university.help@gmail.com, то вывести сообщение: "Письмо успешно 
-отправлено с адреса <sender> на адрес <recipient>." 
-В противном случае вывести сообщение: "НЕСТАНДАРТНЫЙ ОТПРАВИТЕЛЬ! Письмо отправлено с адреса <sender>
- на адрес <recipient>."
-Здесь <sender> и <recipient> - значения хранящиеся в этих переменных.
-За один вызов функции выводится только одно и перечисленных уведомлений! Проверки перечислены по мере выполнения'''
-
-Пример выполняемого кода (тесты):
-send_email('Это сообщение для проверки связи', 'vasyok1337@gmail.com')
+#Здесь <sender> и <recipient> - значения хранящиеся в этих переменных.
+#Пример выполняемого кода (тесты):
+send_email('Это сообщение для проверки связи', 'katja48tab42794@gmail.com')
 send_email('Вы видите это сообщение как лучший студент курса!', 'urban.fan@mail.ru', sender='urban.info@gmail.com')
 send_email('Пожалуйста, исправьте задание', 'urban.student@mail.ru', sender='urban.teacher@mail.uk')
 send_email('Напоминаю самому себе о вебинаре', 'urban.teacher@mail.ru', sender='urban.teacher@mail.ru')
-Вывод на консоль:
+#Вывод на консоль:
 '''
-Письмо успешно отправлено с адреса university.help@gmail.com на адрес vasyok1337@gmail.com
-
+Письмо успешно отправлено с адреса university.help@gmail.com на адрес katja48tab42794@gmail.com
 НЕСТАНДАРТНЫЙ ОТПРАВИТЕЛЬ! Письмо отправлено с адреса urban.info@gmail.com на адрес urban.fan@mail.ru
-
 Невозможно отправить письмо с адреса urban.teacher@mail.uk на адрес urban.student@mail.ru
-
 Нельзя отправить письмо самому себе!
 '''
 
 
-
-
-'''Пример результата выполнения программы:
-Пример выполняемого кода (тесты):
-send_email('Это сообщение для проверки связи', 'vasyok1337@gmail.com')
-send_email('Вы видите это сообщение как лучший студент курса!', 'urban.fan@mail.ru', sender='urban.info@gmail.com')
-send_email('Пожалуйста, исправьте задание', 'urban.student@mail.ru', sender='urban.teacher@mail.uk')
-send_email('Напоминаю самому себе о вебинаре', 'urban.teacher@mail.ru', sender='urban.teacher@mail.ru')
-Вывод на консоль:
-Письмо успешно отправлено с адреса university.help@gmail.com на адрес vasyok1337@gmail.com
-НЕСТАНДАРТНЫЙ ОТПРАВИТЕЛЬ! Письмо отправлено с адреса urban.info@gmail.com на адрес urban.fan@mail.ru
-Невозможно отправить письмо с адреса urban.teacher@mail.uk на адрес urban.student@mail.ru
-Нельзя отправить письмо самому себе!
-
-Примечания:
-Обязательно именованные аргументы отделяются от остальных символом "*" перед ними.
-Именованные аргументы всегда идут после позиционных.
-
-Файл module_3_2.py и загрузите его на ваш GitHub репозиторий. В решении пришлите ссылку на него.'''
+# !!!  Примечания:
+# Обязательно именованные аргументы отделяются от остальных символом "*" перед ними.
+#Именованные аргументы всегда идут после позиционных.
