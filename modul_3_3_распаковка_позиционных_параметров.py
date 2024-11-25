@@ -46,9 +46,9 @@ def append_to_list(item, list_my=None):
         list_my.append(item)
         print(list_my)
 append_to_list(1)'''
-print('Задача "Распаковка"')
-#1.
 
+
+print('Задача "Распаковка"')
 #1
 def print_params(a=0, b='string', c=False):
     print(a,b,c)
