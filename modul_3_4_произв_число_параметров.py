@@ -52,10 +52,6 @@ def single_root_words(root_word, *other_words):
 single_root_words('rIcH', 'richiest', 'orichalcum', 'icheers', 'richies')
 single_root_words('Disablement', 'Able', 'Mable', 'Disable', 'Bagel')
 
-
-
-
-
 '''Функция должна составить новый список same_words только из тех слов списка other_words,
 которые содержат root_word или наоборот root_word содержит одно из этих слов.
 После вернуть список same_words в качестве результата своей работы.
