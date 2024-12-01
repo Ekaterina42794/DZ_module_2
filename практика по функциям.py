@@ -1,8 +1,4 @@
 # Максимум в списке
-# Подсчёт четных чисел в списке
-# Уникальный список
-
-
 def find_max(list_):
     max_ = list_[0]
     for i in list_:
@@ -13,7 +9,7 @@ def find_max(list_):
 
 # print(find_max([1, 2, 1, 5, 0]))
 
-
+# Подсчёт четных чисел в списке
 def count_even(list_):
     counter = 0
     for i in list_:
@@ -26,6 +22,7 @@ def count_even(list_):
 
 # print(count_even([2, 2, 3, 4, 2, 1, 0]))
 
+# Уникальный список
 def unique(list_):
     new_list = []
     for i in list_:
