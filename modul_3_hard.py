@@ -6,13 +6,9 @@ print('Задание "Раз, два, три, четыре, пять .... Эт�
 Т.к. каждая структура может содержать в себе ещё несколько элементов,
 можно использовать параметр *args
 
-Для определения типа данного используйте функцию isinstance.'''
+Для определения типа данного используйте функцию isinstance.
 
-
- # список [список,словарь, кортеж(перемю,словарь),строка,....]
-data_structure = [[1, 2, 3],{'a': 4, 'b': 5},(6, {'cube': 7, 'drum': 8}), "Hello",([{(2, 'Urban', ('Urban2', 35))}])]
-print(help(data_structure))
-'''Что должно быть подсчитано:
+Что должно быть подсчитано:
 Все числа (не важно, являются они ключами или значениям или ещё чем-то).
 Все строки (не важно, являются они ключами или значениям или ещё чем-то)
 
@@ -20,13 +16,24 @@ print(help(data_structure))
 1 + 2 + 3 + len('a') + 4 + len('b') + 5 + 6 + len('cube') + 7 + .... + 35 = 99'''
 
 '''Входные данные (применение функции):
-data_structure = [
-[1, 2, 3],
-{'a': 4, 'b': 5},
-(6, {'cube': 7, 'drum': 8}),
-"Hello",
-((), [{(2, 'Urban', ('Urban2', 35))}])
-]
+ data_structure = [
+                    [1, 2, 3],
+                    {'a': 4, 'b': 5},
+                    (6, 
+                       {'cube': 7, 'drum': 8}),
+                    "Hello",
+                    ((),
+                        [
+                         {
+                           (
+                             2,
+                             'Urban',
+                             ('Urban2', 35)
+                                            )
+                                                }
+                                                 ]
+                                                  )
+                                                    ]
 
 result = calculate_structure_sum(data_structure)
 print(result)
@@ -35,6 +42,46 @@ print(result)
 Выходные данные (консоль):
 99'''
 
+
+def calculate_structure_sum(data_structure):
+    s = 0
+    if isinstance(data_structure, (int, float)):
+        s += data_structure
+    elif isinstance(data_structure, str):
+        s += len(data_structure)
+    elif isinstance(data_structure, (list, tuple, set)):
+        for item in data_structure:
+            s += calculate_structure_sum(item)
+    elif isinstance(data_structure, dict):
+        for key, value in data_structure.items():
+            s += calculate_structure_sum(key)
+            s += calculate_structure_sum(value)
+    return s
+
+
+data_structure = [[1, 2, 3],
+                  {'a': 4, 'b': 5},
+                  (6, {'cube': 7, 'drum': 8}),"Hello",
+                  ((), [{(2, 'Urban', ('Urban2', 35))}])]
+result = calculate_structure_sum(data_structure)
+print(result)
+# result= calculate_structure_sum((1,'vfvfv'))
+# print(result)
+# result = calculate_structure_sum((1, 'vfvfv', ['bnb', {"a": 7}], (1, 2, 3)))
+# print(result)
+
+
+#_________________________________________________________________
+
+#print(help(isinstance))
+''' Помощь по встроенной функции isinstance в модулях builtins:
+isinstance(obj, class_or_tuple, /)
+Возвращает, является ли объект экземпляром класса или его подкласса.
+
+Кортеж, как в ``isinstance(x, (A, B, ...))``, может быть указан в качестве цели для проверки. 
+Это эквивалентно ``isinstance(x, A) или isinstance(x, B) или ...`` и т. д.'''
+
+#print(help(data_structure))
 '''class list(object)
 | list(iterable=(), /)
 |
